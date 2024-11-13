@@ -18,7 +18,7 @@ public class Cuenta {
 		return getSaldo();
 	}
 
-	public void restarSaldo(double cantidad) {
+	public synchronized void restarSaldo(double cantidad) {
 		setSaldo(getSaldo()-cantidad);
 	}
 	

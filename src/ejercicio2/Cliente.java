@@ -6,7 +6,7 @@ public class Cliente extends Thread {
 	private double cantidad;
 	private double total;
 
-	public synchronized void run() {
+	public void run() {
 		while (cuenta.getSaldo() >= cantidad) {
 			cuenta.restarSaldo(cantidad);
 			total = total + cantidad;
@@ -19,6 +19,8 @@ public class Cliente extends Thread {
 			System.out.println(getNombre() + " ha retirado " + cantidad + ", lleva un total de " + total);
 			System.out.println("");
 			System.out.println("Saldo disponible "+cuenta.getSaldo());
+			System.out.println("");
+
 		}
 
 		System.out.println("El dinero total retirado es de " + total);
